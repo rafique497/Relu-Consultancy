@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-7&ssxfjl*1jdx#+5vms3($6b&4mz7b^uh-2$b2n*zm6q(vxt4d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,12 +91,12 @@ WSGI_APPLICATION = 'project_settings.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USERNAME'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT')
+        'ENGINE': "django.db.backends.postgresql",
+        'NAME': '******',# database name
+        'USER': '******', # database username
+        'PASSWORD': '******', # database password
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 
@@ -219,7 +219,7 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': False,
     'AUTH_HEADER_TYPES': "Bearer",
     'ALGORITHM': 'HS512',
-    'SIGNING_KEY': SECRET_KEY,
+    'SIGNING_KEY': 'django-insecure-7&ssxfjl*1jdx#+5vms3($6b&4mz7b^uh-2$b2n*zm6q(vxt4d',
     'AUDIENCE': None,
     'ISSUER': "your_site_url",
     "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.MyTokenObtainPairSerializer",
